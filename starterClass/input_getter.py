@@ -84,7 +84,9 @@ class InputGetter:
 
         #print the whole content
         Obj.printTheContent()
-
+        return Obj
+        
+        
 
     def getNameOfPlugin(self):
         output = input("Name of the plugin: ")

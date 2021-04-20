@@ -22,4 +22,7 @@ possible_field_types = [
 
 for i in possible_field_types:
     print(i)
+
+a = []
+a[0] = 1
     
