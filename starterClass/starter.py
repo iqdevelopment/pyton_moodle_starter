@@ -45,7 +45,7 @@ class Starter:
 
     def addClass(self,classname,folder = ''):
         obj = {
-            "classname" : classname,
+            "name" : classname,
             "folder" : folder 
         }
         self.classes.append(obj)
@@ -56,5 +56,7 @@ class Starter:
         print(self.tasks)
         print(self.classes)
         print(self.copyright)
+        print(self.plugintype)
+        print(self.name)
     
         
