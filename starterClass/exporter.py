@@ -85,6 +85,7 @@ class Exporter:
         for table_obj in obj.tables:
             globals()[f'table{n}'] = ET.SubElement(tables, 'TABLE')
             globals()[f'table{n}'].set('NAME', table_obj['name'])
+            globals()[f'table{n}'].set('COMMENT', 'something just needs to be there')
 
             globals()[f'keys{n}'] = ET.SubElement(globals()[f'table{n}'], 'KEYS')
             globals()[f'key{n}'] = ET.SubElement(globals()[f'keys{n}'], 'KEY')
@@ -208,7 +209,7 @@ class Exporter:
         return_object = return_object + f"$plugin->component = '{obj.plugintype}_{obj.name}'; \n \n"
         #var_exists = 'obj.task' in locals() or 'obj.task' in globals()
         if obj.tasks:
-            return_object = return_object + f"$plugin->cron = 60;'; //enables cron \n \n"  
+            return_object = return_object + f"$plugin->cron = 60; //enables cron \n \n"  
         return_object = return_object + f"$plugin->release = '1.0'; \n \n"
         return_object = return_object + f"$plugin->maturity = MATURITY_STABLE; \n \n"
         file_path = os.path.join(self.full_base_folder_name,'version.php')
@@ -291,8 +292,8 @@ class Exporter:
                         array(
                             'classname' => 'class_file',
                             'blocking' => 0,
-                            'minute' => '0',
-                            'hour' => '0',
+                            'minute' => '*',
+                            'hour' => '*',
                             'day' => '*',
                             'dayofweek' => '*',
                             'month' => '*'
