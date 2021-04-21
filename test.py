@@ -1,3 +1,5 @@
+from datetime import datetime
+import os
 possible_field_types = [
     {
         "type": "int",
@@ -23,6 +25,8 @@ possible_field_types = [
 for i in possible_field_types:
     print(i)
 
-a = []
-a[0] = 1
-    
+dateTimeObj = datetime.now()
+timestamp = dateTimeObj.strftime("%Y%m%d")
+print(timestamp)
+
+print(os.getcwd())

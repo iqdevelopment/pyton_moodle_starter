@@ -5,7 +5,7 @@ class Starter:
     tables = []
     classes = []
     plugintype = ''
-    copyright = ''
+    copyright = []
     version = 2018120300 # moodle 3.6
 
 
@@ -45,7 +45,7 @@ class Starter:
 
     def addCopyright(self,text):
         """adds copyright text"""
-        self.copyright = text
+        self.copyright.append(text)
 
     def addClass(self,classname,folder = ''):
         obj = {

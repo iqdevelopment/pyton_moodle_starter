@@ -15,9 +15,17 @@ x.addTable('newtable','','id')sad
 #x.addLanguage('en')
 print(vars(x))
 x.printTheContent() """
-
-y = InputGetter()
-returned = y.execute()
-print(returned.tables)
-x = Exporter()
-x.exportXml(returned)
+if(__name__) == '__main__':
+    y = InputGetter()
+    returned = y.execute()
+    print(returned.tables)
+    x = Exporter()
+    x.createFolderTree(returned)
+    x.exportXml(returned)
+    x.exportSetting(returned)
+    x.exportVersion(returned)
+    x.exportIndex(returned)
+    x.exportLanguages(returned)
+    x.exportAccess(returned)
+    x.exportTasks(returned)
+    x.exportClasses(returned)
