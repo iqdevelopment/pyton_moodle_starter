@@ -16,10 +16,10 @@
         
         
 /** 
- * @package     local_alfa_test 
+ * @package     local_beta_test 
  * @copyright     Simon Zajicek
- * @copyright     IQdevelopment
  * @copyright     2021
+ * @copyright     IQdevelopment
 
 */
 
@@ -31,9 +31,9 @@ $plugin->version = 20210421; //this is just for me
 $plugin->requires = 2018120300; 
  //requred moodle version (this is for 3.6) more here: https://docs.moodle.org/dev/Releases
  
-$plugin->component = 'local_alfa_test'; 
+$plugin->component = 'local_beta_test'; 
  
-$plugin->cron = 60;
+$plugin->cron = 60;'; //enables cron 
  
 $plugin->release = '1.0'; 
  

@@ -16,26 +16,31 @@
         
         
 /** 
- * @package     local_alfa_test 
+ * @package     local_beta_test 
  * @copyright     Simon Zajicek
- * @copyright     IQdevelopment
  * @copyright     2021
+ * @copyright     IQdevelopment
 
 */
 
+namespace local_beta_test; 
 
 
 
-$plugin->version = 20210421; //this is just for me
+require_once '../../config.php';
+require_login();
+global $USER,$DB,$CFG;
  
-$plugin->requires = 2018120300; 
- //requred moodle version (this is for 3.6) more here: https://docs.moodle.org/dev/Releases
+$PAGE->set_url('/local/beta_test/index.php');
+$PAGE->set_title(get_string('modulename','local_beta_test'));
+$PAGE->navbar->add($PAGE->title, $PAGE->url);
+echo $OUTPUT->header();
+ //if needed JS $PAGE->requires->js('/local/beta_test/assets/js/custom.js');
+ //if needed JS $PAGE->requires->css('/local/beta_test/assets/css/custom.css'); 
+
  
-$plugin->component = 'local_alfa_test'; 
  
-$plugin->cron = 60;
+//your code
  
-$plugin->release = '1.0'; 
  
-$plugin->maturity = MATURITY_STABLE; 
- 
+echo $OUTPUT->footer();

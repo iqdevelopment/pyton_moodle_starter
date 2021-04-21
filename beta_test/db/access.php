@@ -16,26 +16,32 @@
         
         
 /** 
- * @package     local_alfa_test 
+ * @package     local_beta_test 
  * @copyright     Simon Zajicek
- * @copyright     IQdevelopment
  * @copyright     2021
+ * @copyright     IQdevelopment
 
 */
 
 
 
 
-$plugin->version = 20210421; //this is just for me
- 
-$plugin->requires = 2018120300; 
- //requred moodle version (this is for 3.6) more here: https://docs.moodle.org/dev/Releases
- 
-$plugin->component = 'local_alfa_test'; 
- 
-$plugin->cron = 60;
- 
-$plugin->release = '1.0'; 
- 
-$plugin->maturity = MATURITY_STABLE; 
- 
+defined ( 'MOODLE_INTERNAL' ) || die();
+
+                $capabilities = array(
+                    'local/beta_test:view' => array(
+                        'captype' => 'write',
+                        'contextlevel' => CONTEXT_SYSTEM,
+                        'archetypes' => array(
+                            'manager' => CAP_ALLOW
+                        )
+                    ),
+                    'local/beta_test:manage' => array(
+                        'captype' => 'write',
+                        'contextlevel' => CONTEXT_SYSTEM,
+                        'archetypes' => array(
+                            'manager' => CAP_ALLOW
+                        )
+                    )
+                );
+                

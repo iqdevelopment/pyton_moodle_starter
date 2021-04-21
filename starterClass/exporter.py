@@ -73,8 +73,9 @@ class Exporter:
        # ET.tostring(encoding="unicode",pretty_print=True)
         data = ET.Element('XMLDB')
         #sem docpat plugin atd..
-        data.set('path',f'{obj.plugintype}_{obj.name}/db')
-        data.set('version',f'{obj.version}')
+        data.set('PATH',f'{obj.plugintype}/{obj.name}/db')
+        data.set('VERSION',f'{obj.version}')
+        data.set('COMMENT',f'XMLDB file for Moodle {obj.plugintype}/{obj.name}')
         data.set('xmlns:xsi','http://www.w3.org/2001/XMLSchema-instance')
         data.set('xsi:noNamespaceSchemaLocation','../../../lib/xmldb/xmldb.xsd')
         data.tail = "\n" 
@@ -295,7 +296,7 @@ class Exporter:
                             'day' => '*',
                             'dayofweek' => '*',
                             'month' => '*'
-                        ), \n \n""".replace('class_file',f'{obj.plugintype}\\{obj.name}\\{task}')
+                        ), \n \n""".replace('class_file',f'{obj.plugintype}_{obj.name}\\task\{task}')
 
                 #filling for the task class file
 
