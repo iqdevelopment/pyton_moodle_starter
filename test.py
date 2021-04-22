@@ -30,3 +30,7 @@ timestamp = dateTimeObj.strftime("%Y%m%d")
 print(timestamp)
 
 print(os.getcwd())
+
+
+
+    a.property

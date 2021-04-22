@@ -346,7 +346,7 @@ class Exporter:
                 #if in folder create folder
                 folder_path_class = os.path.join(folder_path,class_obj["folder"])
                 os.makedirs(folder_path_class, exist_ok=True)
-                file_namespace = f'{obj.plugintype}_{obj.name}/{class_obj["folder"]}'
+                file_namespace = f'{obj.plugintype}_{obj.name}\{class_obj["folder"]}'
             else:
                folder_path_class = folder_path
                file_namespace = f'{obj.plugintype}_{obj.name}'
