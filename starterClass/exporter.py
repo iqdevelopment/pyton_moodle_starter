@@ -70,6 +70,9 @@ class Exporter:
 
     def exportXml(self,obj):
         """Method to export xml to /db/install.xml"""
+        print(obj)
+        if not (obj.tables):
+            return 0
        # ET.tostring(encoding="unicode",pretty_print=True)
         data = ET.Element('XMLDB')
         #sem docpat plugin atd..
